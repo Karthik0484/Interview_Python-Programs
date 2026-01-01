@@ -189,7 +189,34 @@ a1.mark_attendance()
 
 a1.show_attendnace()
 
+'''Q7. Real-Time Report Generator
 
+Create a class that:
+stores data
+generates a formatted report
+📌 Tests: clean OOP design'''
+
+class Report:
+
+    def __init__(self,total,present):
+        if present > total or total <= 0:
+            raise ValueError("Invalid attendance data")
+
+        self.total = total
+        self.present = present
+
+    def report(self):
+        print("Formatted Report.")
+        percentage = (self.present / self.total) * 100
+        print("Percentage: ",percentage)
+        return {
+            "Total Students": {self.total},
+            "No.of Present" : {self.present},
+            "No.of.Absentees": {self.total - self.present}
+        }
+
+r1 = Report(60,54)
+print(r1.report())
 
 
 
