@@ -88,7 +88,10 @@ def sec_largest(arr):
         elif i>second_largest and i!= largest:
             second_largest = i
 
-    return second_largest
+    if second_largest==float('-inf'):
+        print("No second largest element.")
+    else:
+        return second_largest
 
 print(sec_largest(a))
 
